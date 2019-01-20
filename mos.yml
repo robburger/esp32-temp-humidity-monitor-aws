@@ -21,15 +21,20 @@ filesystem:
   - fs
 
 # Custom configuration entries, settable via "device configuration"
-
+config_schema:
+- ["dht.pin", "i", 14, {title: "GPIO pin the DHT22 sensor is attached to"}]
+- ["dht.freq", "i", 10, {title: "Frequency of readings in seconds. Min. 2 sec"}]
 
 # Libraries needed for firmware compilation
 libs:
   - origin: https://github.com/mongoose-os-libs/boards
   - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/dht
   - origin: https://github.com/mongoose-os-libs/rpc-service-config
   - origin: https://github.com/mongoose-os-libs/rpc-service-fs
   - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/wifi
 
 # Used by the mos tool to catch mos binaries incompatible with this file format
 manifest_version: 2017-09-29
