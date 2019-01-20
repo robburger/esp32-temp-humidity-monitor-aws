@@ -53,7 +53,7 @@ static void rpc_dht_temp_cb(struct mg_rpc_request_info *ri,
   }
 
   // Return JSON formatted data, rounded to 2 places
-  mg_rpc_send_responsef(ri, "{value: %.2f}", t);
+  mg_rpc_send_responsef(ri, "{temp: %.2f}", t);
   (void) fi;
   (void) args;
 }
@@ -75,7 +75,7 @@ static void rpc_dht_humidity_cb(struct mg_rpc_request_info *ri,
   }
 
   // Return JSON formatted data, rounded to 2 places
-  mg_rpc_send_responsef(ri, "{value: %.2f}", h);
+  mg_rpc_send_responsef(ri, "{humidity: %.2f}", h);
   (void) fi;
   (void) args;
 }
